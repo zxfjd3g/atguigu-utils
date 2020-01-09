@@ -16,7 +16,7 @@ module.exports = {
       commonjs: 'lodash',
       commonjs2: 'lodash',
       amd: 'lodash',
-      root: '_' // 指向全局变量
+      root: '_' // 页面引入的全局变量
     }
   }
 }
