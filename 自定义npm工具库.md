@@ -31,11 +31,11 @@
 ### 3). package.json
     {
       "name": "atguigu-utils",
-      "version": "1.1.4",
-      "main": "dist/atguigu-utils.js",
+      "version": "1.1.7",
       "author": "xfzhang",
       "description": "尚硅谷大前端自定义工具函数库",
       "keywords": ["atguigu", "utils", "array", "object", "function", "promise", "axios"],
+      "main": "dist/atguigu-utils.js",
       "license": "MIT",
       "scripts": {
         "build": "webpack"
@@ -49,12 +49,15 @@
       }
     }
 
+### 4). 生成打包库文件
+    npm run build
+
 ## 2. 发布到npm仓库
 		1). 前置
         npm配置的中央仓库不能是淘宝镜像
         npm config set registry https://registry.npmjs.org/
         npm config set registry http://registry.npm.taobao.org/
-		
+          
     2). 注册npm中央仓库账号
         https://www.npmjs.com/
         用户名/密码/邮箱
@@ -72,6 +75,17 @@
         注意: 必须在72小时内, 否则不能再删除
 
 ## 3. 下载并使用自定义工具包
-    yarn add atguigu-utils
-    网页中使用
-    模块化使用
+    1). 下载并使用自定义工具包
+	      yarn add atguigu-utils
+	 
+    2). 网页中使用
+		    <script src="./node_modules/atguigu-utils/dist/atguigu-utils.js"></script>
+        <script>
+          console.log(aUtils.flatten1([1, [3, [2, 4]]]))  // [1, 3, 2, 4]
+        </script>
+	  
+    3). 模块引入并使用
+        import {flatten1} from 'atguigu-utils'
+        const {flatten2} = require('atguigu-utils')
+        console.log(aUtils.flatten1([1, [3, [2, 4]]]))
+        console.log(aUtils.flatten2([1, [3, [2, 4]]]))
