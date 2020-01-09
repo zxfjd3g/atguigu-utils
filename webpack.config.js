@@ -1,13 +1,13 @@
 const path = require('path')
 
 module.exports = {
-  // mode: 'development',
-  mode: 'production',
+  mode: 'development',
+  // mode: 'production',
   entry: './src/index.js',
   output: {
     path: path.resolve(__dirname, 'dist'),
-    // filename: 'atguigu-utils.js',
-    filename: 'atguigu-utils.min.js',
+    filename: 'atguigu-utils.js',
+    // filename: 'atguigu-utils.min.js',
     libraryTarget: 'umd',
     library: 'aUtils'
   },

@@ -356,7 +356,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) *
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"mergeObject\", function() { return mergeObject; });\n/* \r\nmerge(...objs): 合并多个对象, 返回一个合并后对象(不改变原对象)\r\n*/\r\nfunction mergeObject(...objs) {\r\n  return objs.reduce((pre, obj) => {\r\n    return Object.keys(obj).reduce((p, key) => {\r\n      p[key] = !p.hasOwnProperty(key) ? obj[key] : [].concat(p[key], obj[key])\r\n      return p\r\n    }, pre)\r\n  \r\n  }, {})\r\n}\n\n//# sourceURL=webpack://aUtils/./src/object/merge.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"mergeObject\", function() { return mergeObject; });\n/* \r\nmerge(...objs): 合并多个对象, 返回一个合并后对象(不改变原对象)\r\n{ a: [{ x: 2 }, { y: 4 }], b: 1}\r\n{ a: { z: 3}, b: [2, 3], c: 'foo'}\r\n合并后: { a: [ { x: 2 }, { y: 4 }, { z: 3 } ], b: [ 1, 2, 3 ], c: 'foo' }\r\n*/\r\nfunction mergeObject(...objs) {\r\n  return objs.reduce((pre, obj) => {\r\n    return Object.keys(obj).reduce((p, key) => {\r\n      p[key] = !p.hasOwnProperty(key) ? obj[key] : [].concat(p[key], obj[key])\r\n      return p\r\n    }, pre)\r\n  }, {})\r\n}\n\n//# sourceURL=webpack://aUtils/./src/object/merge.js?");
 
 /***/ }),
 
