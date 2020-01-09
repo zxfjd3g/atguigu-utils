@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>手写继承</title>
+</head>
+
+<body>
+  <!--
+  手写继承:
+      实现方式: 寄生组合式
+      说明: 其它方式的继承会在一次实例中调用两次父类的构造函数或有其它缺点
+  -->
+  <script>
+    function Parent(name, age) {
+      this.name = name
+      this.age = age
+    }
+    Parent.prototype.sayName = function () {
+      console.log('name:', this.name)
+    }
+
+    function Child(name, age, score) {
+      Parent.call(this, name, age)
+      this.score = score
+    }
+
+    function create(proto) {
+      function F() {}
+      F.prototype = proto
+      return new F()
+    }
+    
+    Child.prototype = create(Parent.prototype)
+    Child.prototype.constructor = Child
+    Child.prototype.sayScore = function () {
+      console.log('score:', this.score)
+    }
+
+    // 创建父类型对象
+    var parent = new Parent('father', 30)
+    parent.sayName()
+
+    // 创建子类型对象
+    var child = new Child('son', 5, 90)
+    child.sayName()
+    child.sayScore()
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,19 @@
+{
+  "name": "atguigu-utils",
+  "version": "1.1.6",
+  "author": "xfzhang",
+  "description": "尚硅谷大前端自定义工具函数库",
+  "keywords": ["atguigu", "utils", "array", "object", "function", "promise", "axios"],
+  "main": "dist/atguigu-utils.js",
+  "license": "MIT",
+  "scripts": {
+    "build": "webpack"
+  },
+  "devDependencies": {
+    "webpack": "^4.41.5",
+    "webpack-cli": "^3.3.10"
+  },
+  "dependencies": {
+    "lodash": "^4.17.15"
+  }
+}
