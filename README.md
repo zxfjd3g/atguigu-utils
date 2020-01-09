@@ -68,7 +68,7 @@
 ### slice()
 ### flatten()
 ### compact()
-### chunk()
+### chunk() / chunk2()
 ### difference()
 ### mergeArray()
 ### pull()
