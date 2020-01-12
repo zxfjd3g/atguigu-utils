@@ -1,4 +1,4 @@
-# 尚硅谷大前端工具函数库
+# 尚硅谷大前端自定义工具函数库
 
 # 说明
 ## 1. 包含以下8个方面
@@ -10,6 +10,7 @@
     6). 消息订阅与发布
     7). Promise
     8). ajax函数axios
+    9). 数据结构与算法
 
 ## 2. 使用
     1). 下载: 
@@ -120,3 +121,13 @@
 ### axios.post()
 ### axios.delete()
 ### axios.put()
+
+## 9. 数据结构与算法
+### Stack()
+### Queue()
+### PriorityQueue()
+### bubbleSort() / selectSort() / insertSort()
+### shellSort() / mergeSort / quickSort()
+### LinkedList()
+### DoublyLinkedList()
+### BinarySearchTree()
