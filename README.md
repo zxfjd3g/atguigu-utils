@@ -122,13 +122,3 @@
 ### axios.delete()
 ### axios.put()
 
-## 9. 数据结构与算法
-### Stack()
-### Queue()
-### PriorityQueue()
-### bubbleSort() / selectSort() / insertSort()
-### shellSort() / mergeSort / quickSort()
-### LinkedList()
-### DoublyLinkedList()
-### BinarySearchTree()
-### Set()
