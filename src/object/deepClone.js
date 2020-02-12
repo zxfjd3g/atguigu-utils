@@ -20,13 +20,22 @@ export function deepClone1(target) {
   return JSON.parse(JSON.stringify(target))
 }
 
+/* 
+获取数据的类型字符串名
+*/
+function getType(data) {
+  return Object.prototype.toString.call(data).slice(8, -1)
+}
+
 /*
 2). 面试基础版本
   解决问题1: 函数属性还没丢失
 */
 export function deepClone2(target) {
-  if (target != null && typeof target === 'object') {
-    const cloneTarget = Array.isArray(target) ? [] : {}
+  const type = getType(target)
+
+  if (type==='Object' || type==='Array') {
+    const cloneTarget = type === 'Array' ? [] : {}
     for (const key in target) {
       if (target.hasOwnProperty(key)) {
         cloneTarget[key] = deepClone2(target[key])
@@ -43,12 +52,13 @@ export function deepClone2(target) {
   解决问题2: 循环引用正常
 */
 export function deepClone3(target, map = new Map()) {
-  if (target != null && typeof target === 'object') {
+  const type = getType(target)
+  if (type==='Object' || type==='Array') {
     let cloneTarget = map.get(target)
     if (cloneTarget) {
       return cloneTarget
     }
-    cloneTarget = Array.isArray(target) ? [] : {}
+    cloneTarget = type==='Array' ? [] : {}
     map.set(target, cloneTarget)
     for (const key in target) {
       if (target.hasOwnProperty(key)) {
@@ -67,13 +77,14 @@ export function deepClone3(target, map = new Map()) {
     对象: for-in 与 keys()&forEach() 差不多
 */
 export function deepClone4(target, map = new Map()) {
-  if (target != null && typeof target === 'object') {
+  const type = getType(target)
+  if (type==='Object' || type==='Array') {
     let cloneTarget = map.get(target)
     if (cloneTarget) {
       return cloneTarget
     }
 
-    if (Array.isArray(target)) {
+    if (type==='Array') {
       cloneTarget = []
       map.set(target, cloneTarget)
       target.forEach((item, index) => {

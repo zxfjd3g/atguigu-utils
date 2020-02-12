@@ -1,6 +1,6 @@
 {
   "name": "atguigu-utils",
-  "version": "1.2.2",
+  "version": "1.2.3",
   "author": "xfzhang",
   "description": "尚硅谷大前端自定义工具函数库",
   "keywords": ["atguigu", "utils", "array", "object", "function", "promise", "axios", "数据结构", "算法"],
